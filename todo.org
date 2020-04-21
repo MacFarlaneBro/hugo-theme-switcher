@@ -1,0 +1,6 @@
+* TODO Select random theme from hugo theme database
+* TODO Download selected theme
+** TODO First check if theme has already been downloaded and is in database
+** TODO Save theme to database
+* TODO Create cookie for user, save relationship between user and theme in database so that they are served the same theme when they return to the website.
+* TODO Add javascript Overlay in one corner telling the user which theme they're currently experiencing and allowing them to roll again.
