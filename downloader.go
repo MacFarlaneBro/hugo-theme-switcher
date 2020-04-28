@@ -1,4 +1,4 @@
-package main
+package hugothemeswitcher
 
 import (
 	"fmt"
@@ -48,13 +48,13 @@ func getHugoTheme() {
 	// Remove all non-url lines
 	urlFilter := func(s string) bool { return strings.HasPrefix(s, "url") }
 
-	//add all themes to a slice
+	// add all themes to a slice
 	urls := filter(lines, urlFilter)
 
 	// select a random repo
 	rand.Seed(time.Now().Unix())
+	// print it out
 	fmt.Println(urls[rand.Intn(len(urls))])
-
 	// download the theme
 }
 
