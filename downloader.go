@@ -16,11 +16,11 @@ const themes string = "https://github.com/gohugoio/hugoThemes"
 const themesDirectory string = "./themes"
 
 func main() {
-	getHugoTheme()
-	fmt.Println("Welcome to the hugo theme switcherdafd.")
+	theme := getHugoTheme()
+	fmt.Printf("Welcome to the hugo theme switcher, your randomly selected theme for today is : %v", theme)
 }
 
-func getHugoTheme() {
+func getHugoTheme() string {
 	//pull latest version of hugo themes repo
 	if _, err := os.Stat(themesDirectory); os.IsNotExist(err) {
 
@@ -54,8 +54,10 @@ func getHugoTheme() {
 	// select a random repo
 	rand.Seed(time.Now().Unix())
 	// print it out
-	fmt.Println(urls[rand.Intn(len(urls))])
-	// download the theme
+	chosenUrl := urls[rand.Intn(len(urls))]
+	fmt.Println(chosenUrl)
+
+	return chosenUrl
 }
 
 //Filter function lifted from here: https://stackoverflow.com/questions/37562873/most-idiomatic-way-to-select-elements-from-an-array-in-golang#answer-37563128
